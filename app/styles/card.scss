@@ -1,0 +1,28 @@
+.card {
+  background: $background;
+  border-radius: $radius;
+  box-sizing: border-box;
+  font-family: $font-family;
+  padding: 16px;
+  position: relative;
+  transition: box-shadow .2s ease-out;
+
+  &:before {
+    border-radius: $radius;
+    box-shadow: 0 1px 3px 0 $foreground;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: .2;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transition: box-shadow .2s ease-out;
+    width: 100%;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 4px $focus;
+  }
+}

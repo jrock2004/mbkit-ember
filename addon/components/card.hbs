@@ -1,0 +1,9 @@
+{{#if @as}}
+  <@as class="card" ...attributes>
+    {{yield}}
+  </@as>
+{{else}}
+  <div class="card" ...attributes>
+    {{yield}}
+  </div>
+{{/if}}
