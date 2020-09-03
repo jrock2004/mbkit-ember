@@ -1,0 +1,30 @@
+{{#if (eq @as "h1")}}
+  <h1 class="h1 {{this.textColor}}" ...attributes>
+    {{yield}}
+  </h1>
+{{else if (eq @as "h2")}}
+  <h2 class="h2 {{this.textColor}}" ...attributes>
+    {{yield}}
+  </h2>
+{{else if (eq @as "h3")}}
+  <h3 class="h3 {{this.textColor}}" ...attributes>
+    {{yield}}
+  </h3>
+{{else if (eq @as "h4")}}
+  <h4 class="h4 {{this.textColor}}" ...attributes>
+    {{yield}}
+  </h4>
+{{else if (eq @as "h5")}}
+  <h5 class="h5 {{this.textColor}}" ...attributes>
+    {{yield}}
+  </h5>
+{{else if (eq @as "h6")}}
+  <h6 class="h6 {{this.textColor}}" ...attributes>
+    {{yield}}
+  </h6>
+{{else}}
+  <h1 class="h1 {{this.textColor}}" ...attributes>
+    {{yield}}
+  </h1>
+{{/if}}
+

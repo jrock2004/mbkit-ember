@@ -1,0 +1,9 @@
+{{#if @as}}
+  <@as class={{this.cssClasses}} ...attributes>
+    {{yield}}
+  </@as>
+{{else}}
+  <p class={{this.cssClasses}} ...attributes>
+    {{yield}}
+  </p>
+{{/if}}
