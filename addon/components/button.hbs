@@ -1,0 +1,14 @@
+<button
+  id={{this.elementId}}
+  class={{this.css}}
+  type="button"
+  {{on "click" this.generateRipple}}
+  ...attributes
+>
+  <span class="children">
+    {{yield}}
+  </span>
+  {{#if @isLoading}}
+    <div class="loader">Loading...</div>
+  {{/if}}
+</button>

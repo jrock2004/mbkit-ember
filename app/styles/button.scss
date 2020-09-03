@@ -1,0 +1,323 @@
+$rippleTiming: 466;
+
+$iconSize1: 100px;
+$iconSize2: 60px;
+$iconSize3: 40px;
+$iconSize4: 30px;
+
+:export {
+  rippleTiming: $rippleTiming;
+}
+
+@mixin disabled() {
+  &[disabled]:not([disabled="false"]) {
+    @content;
+  }
+}
+@mixin svgTargetFill() {
+  svg g:not([fill~="#"]),
+  svg path:not([fill~="#"]),
+  svg mask:not([fill~="#"]),
+  svg use:not([fill~="#"]) {
+    @content;
+  }
+}
+@mixin buttonStyles($background, $border: $background, $color: $background, $svg: $background) {
+  background: $background;
+  border-color: $border;
+  color: $color;
+
+  .ripple {
+    background-color: $background;
+  }
+
+  @include svgTargetFill {
+    fill: $svg;
+  }
+
+  @include loader($color, $background);
+}
+@mixin buttonHover($background, $border: $neutral-light, $color: $background, $svg: $neutral-darker) {
+  &:not(.loading):not([disabled]):hover {
+    background: $background;
+    border-color: $border;
+    color: $color;
+
+    @include svgTargetFill {
+      fill: $svg;
+    }
+  }
+}
+@mixin buttonDisabled {
+  @include disabled {
+    background: $neutral-dark;
+    border-color: $neutral-dark;
+    color: $neutral-light;
+    cursor: not-allowed;
+
+    @include svgTargetFill {
+      fill: $neutral-light;
+    }
+
+    @include loader($neutral-light, $neutral-dark);
+  }
+}
+/*
+ * Exposes `loader` class name to be applied to an element
+ */
+@mixin loader($color, $background) {
+  $loadingSpeed: 650;
+  .loader {
+    &,
+    &:before,
+    &:after {
+      border-radius: 50%;
+    }
+
+    box-shadow: inset 0 0 0 1px;
+    color: $color;
+    font-size: 4px;
+    height: 18px;
+    left: 50%;
+    position: absolute;
+    text-indent: -999px;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0) rotate(180deg);
+    width: 18px;
+
+
+    &:before,
+    &:after {
+      background: $background;
+      content: '';
+      height: 20px;
+      position: absolute;
+      top: -1px;
+      width: 12px;
+    }
+
+    &:before {
+      animation: spin #{$loadingSpeed}ms infinite ease #{$loadingSpeed * .75}ms;
+      border-radius: 20px 0 0 20px;
+      left: -1px;
+      transform-origin: 11px 11px;
+    }
+    &:after {
+      animation: spin #{$loadingSpeed}ms infinite ease;
+      border-radius: 0 20px 20px 0;
+      left: 9px;
+      transform-origin: 0px 9px;
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.button {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius, 3px);
+  cursor: pointer;
+  font-family: var(--font-family, 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif');
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  text-align: center;
+  transition: background .2s ease-out, color .2s ease-out, fill .2s ease-out;
+
+  &, & * {
+    box-sizing: border-box;
+  }
+
+  &, .children {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    position: relative;
+  }
+  .children {
+    height: 100%;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  svg {
+    margin: 0 4px;
+  }
+
+  .ripple {
+    animation: grow #{$rippleTiming}ms cubic-bezier(0, 0, 0.66, 1);
+    border-radius: 50%;
+    height: 12px;
+    left: 0;
+    opacity: .3;
+    position: absolute;
+    top: 0;
+    transform: scale(.1);
+    width: 12px;
+  }
+
+  &.size4 .children {
+    font-size: .75rem;
+    min-width: 76px;
+    padding: 4px 24px;
+  }
+  &.size3 .children {
+    font-size: .875rem;
+    min-width: 96px;
+    padding: 8px 32px;
+  }
+  &.size2 .children {
+    font-size: 1rem;
+    min-width: 116px;
+    padding: 16px 40px;
+  }
+  &.size1 .children {
+    font-size: 1.5rem;
+    min-width: 136px;
+    padding: 32px 64px;
+  }
+  &.icon, &.iconPrimary {
+    .children {
+      min-width: initial;
+      padding: 8px;
+    }
+    $svgSizeSmaller: 8px;
+    &.size1 .children {
+      height: $iconSize1;
+      width: $iconSize1;
+
+      svg {
+        height: $iconSize1 - $svgSizeSmaller;
+        width: $iconSize1 - $svgSizeSmaller;
+      }
+    }
+    &.size2 .children {
+      height: $iconSize2;
+      width: $iconSize2;
+
+      svg {
+        height: $iconSize2 - $svgSizeSmaller;
+        width: $iconSize2 - $svgSizeSmaller;
+      }
+    }
+    &.size3 .children {
+      height: $iconSize3;
+      width: $iconSize3;
+
+      svg {
+        height: $iconSize3 - $svgSizeSmaller;
+        width: $iconSize3 - $svgSizeSmaller;
+      }
+
+    }
+    &.size4 .children {
+      height: $iconSize4;
+      width: $iconSize4;
+
+      svg {
+        height: $iconSize4 - $svgSizeSmaller;
+        width: $iconSize4 - $svgSizeSmaller;
+      }
+    }
+  }
+
+  &.primary {
+    @include buttonStyles($primary-base, $primary-base, $primary-foreground, $primary-foreground);
+    @include buttonHover($background, $primary-base, $foreground, $foreground);
+  }
+  &.secondary {
+    @include buttonStyles($secondary-base, $secondary-base, $secondary-foreground, $secondary-foreground);
+    @include buttonHover($background, $secondary-base, $foreground, $foreground);
+  }
+  &.tertiary {
+    @include buttonStyles($tertiary-base, $tertiary-base, $tertiary-foreground, $tertiary-foreground);
+    @include buttonHover($background, $tertiary-base, $foreground, $foreground);
+  }
+  &.primaryOutlined {
+    @include buttonStyles($background, $primary-base, $foreground, $neutral-darker);
+    @include buttonHover($primary-base, $primary-base, $primary-foreground, $primary-foreground);
+  }
+  &.secondaryOutlined {
+    @include buttonStyles($background, $secondary-base, $foreground, $neutral-darker);
+    @include buttonHover($secondary-base, $secondary-base, $secondary-foreground, $secondary-foreground);
+  }
+  &.tertiaryOutlined {
+    @include buttonStyles($background, $tertiary-base, $foreground, $neutral-darker);
+    @include buttonHover($tertiary-base, $tertiary-base, $tertiary-foreground, $tertiary-foreground);
+  }
+  &.offCard {
+    @include buttonStyles($background, $background, $foreground, $neutral-darker);
+    @include buttonHover($tertiary-base, $tertiary-base, $tertiary-foreground, $tertiary-foreground);
+  }
+  &.iconPrimary {
+    @include buttonStyles($background, $background, $secondary-base, $secondary-base);
+    @include buttonHover($secondary-light, $secondary-light, $secondary-base, $secondary-base);
+    border-radius: 50%;
+  }
+  &.icon {
+    @include buttonStyles($background, $background, $foreground, $foreground);
+    @include buttonHover($neutral-light, $neutral-light, $foreground, $foreground);
+    border-radius: 50%;
+  }
+  &.simpleText {
+    @include buttonStyles($background, $background, $secondary-base, $secondary-base);
+    @include buttonStyles($background, $background, $secondary-base, $secondary-base);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &.loading {
+    cursor: wait;
+
+    .children {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @include buttonDisabled();
+
+  svg g.loading {
+    fill: none !important;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 4px $focus;
+    outline: none;
+    transition: box-shadow 100ms ease-out;
+
+    &:not(.loading):active {
+      box-shadow: 0 0 0 8px $focus;
+    }
+  }
+}
+
+@keyframes grow {
+  0% {
+    opacity: .5;
+    transform: scale(.1);
+  }
+  20% {
+    transform: scale(1);
+  }
+  80% {
+    opacity: .2;
+    transform: scale(50);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(50);
+  }
+}
