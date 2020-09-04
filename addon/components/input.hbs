@@ -1,0 +1,33 @@
+{{#if (or @before @after)}}
+<div id={{this.divId}} class={{this.containerClass}} data-disabled={{if @disabled "true"}}>
+    {{#if @before}}
+      <span class="beforeInput">
+        {{@before}}
+      </span>
+    {{/if}}
+    <input
+      class={{this.inputClass}}
+      value={{@value}}
+      aria-invalid={{@isInvalid}}
+      disabled={{@disabled}}
+      {{on "focus" this.handleFocus}}
+      {{on "blur" this.handleFocus}}
+      ...attributes
+    />
+    {{#if @after}}
+      <span class="afterInput">
+        {{@after}}
+      </span>
+    {{/if}}
+  </div>
+{{else}}
+  <input
+    class={{this.inputClass}}
+    value={{@value}}
+    aria-invalid={{@isInvalid}}
+    disabled={{@disabled}}
+    {{on "focus" this.handleFocus}}
+    {{on "blur" this.handleFocus}}
+    ...attributes
+  />
+{{/if}}

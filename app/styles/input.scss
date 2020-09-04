@@ -1,0 +1,114 @@
+@mixin svgTargetFill() {
+  g:not([fill~="#"]),
+  path:not([fill~="#"]),
+  use:not([fill~="#"]) {
+    @content;
+  }
+}
+
+@mixin disabled {
+  cursor: not-allowed;
+  background: $neutral-light;
+  border-color: $neutral-light;
+  color: $neutral-dark;
+
+  @include svgTargetFill {
+    fill: $neutral-dark;
+  }
+}
+
+$border: 1px solid $neutral-light;
+
+.inputContainer {
+  display: flex;
+  width: 100%;
+  transition: box-shadow .1s ease-out;
+  border-radius: $radius;
+  background: $background;
+  color: $foreground;
+
+  &, & * {
+    box-sizing: border-box;
+  }
+
+  &.hasFocus {
+    box-shadow: 0 0 0 4px var(--focus,rgba(96,150,230,.75));
+    .beforeInput, .afterInput {
+      border-color: $secondary-base;
+    }
+  }
+
+  .beforeInput, .afterInput {
+    display: inline-flex;
+    padding: 8px;
+    border: $border;
+    border-radius: $radius 0 0 $radius;
+    align-items: center;
+  }
+  .afterInput {
+    border-radius: 0 $radius $radius 0;
+  }
+
+  &.invalid {
+    .beforeInput, .afterInput {
+      border-top-color: $error-base;
+      border-bottom-color: $error-base;
+    }
+    .beforeInput {
+      border-left-color: $error-base;
+    }
+    .afterInput {
+      border-right-color: $error-base;
+    }
+  }
+
+  &[data-disabled="true"] {
+    .beforeInput, .afterInput {
+      @include disabled();
+    }
+  }
+}
+
+.input {
+  flex: 1;
+  width: 100%;
+  appearance: none;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: $font-spec-5-size;
+  border: $border;
+  border-radius: $radius;
+  color: $foreground;
+  background: $background;
+  padding: 8px;
+  font-family: $font-family;
+  display: flex;
+  transition: border-color .2s ease-out;
+  min-width: 0;
+
+  &.hasBefore {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+  }
+  &.hasAfter {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+  }
+
+  &.hasFocus {
+    box-shadow: 0 0 0 4px var(--focus,rgba(96,150,230,.75));
+  }
+  &:focus {
+    outline: none;
+    border-color: $secondary-base;
+  }
+  &.invalid {
+    border-color: $error-base;
+  }
+
+  &:disabled {
+    @include disabled();
+  }
+}
