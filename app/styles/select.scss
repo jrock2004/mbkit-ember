@@ -1,0 +1,108 @@
+@mixin downChevron($fill) {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' class=''%3E%3Cg id='Icons/Glyphs/Chevron---Down-vfNaTDX8tnyDfRIM7JRyh' fill='none' fill-rule='evenodd' stroke='none' stroke-width='1'%3E%3Cpath id='Mask-vfNaTDX8tnyDfRIM7JRyh' fill='" + encodeHexColor($fill) + "' d='M5.6095656 3.31234752l.7808688-.62469504L10.6403124 8l-4.249878 5.3123475-.7808688-.624695L9.35968758 8z' transform='rotate(90 8.124939 8)'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+}
+
+.select {
+  appearance: none;
+  background: $background;
+  background-position: calc(100% - 12px) 50%;
+  background-repeat: no-repeat;
+  border: 1px solid $neutral-light;
+  border-radius: $radius;
+  box-sizing: border-box;
+  color: $foreground;
+  cursor: pointer;
+  display: block;
+  font-family: $font-family;
+  font-size: $font-spec-5-size;
+  outline: none;
+  padding: 8px;
+  transition: box-shadow .1s ease-out, border .2s ease-out;
+  width: 100%;
+  @include downChevron(#2D2D2D);
+
+  &:not(:disabled) {
+    &:focus {
+      border-color: $secondary-base;
+      box-shadow: 0 0 0 4px $focus;
+    }
+    &.invalid {
+      border-color: $error-base;
+    }
+  }
+  &:disabled {
+    background-color: $neutral-light;
+    border-color: $neutral-light;
+    color: $neutral-darker;
+    cursor: not-allowed;
+    @include downChevron(#696C74);
+  }
+}
+.multiSelectContainer {
+  position: relative;
+
+  .select.isOpen {
+    border-bottom-color: $neutral-lighter;
+    border-color: $secondary-base;
+    border-radius: $radius $radius 0 0;
+  }
+}
+
+.multiSelectMenu {
+  background: $background;
+  border: 1px solid $secondary-base;
+  border-top: none;
+  border-radius: 0 0 $radius $radius;
+  box-sizing: border-box;
+  display: none;
+  left: 0;
+  max-height: 200px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  overflow: scroll;
+  visibility: hidden;
+  width: 100%;
+  z-index: 1;
+
+  &.isOpen {
+    display: block;
+    opacity: 1;
+    pointer-events: initial;
+    visibility: visible;
+  }
+}
+.multiSelectItem {
+  align-items: center;
+  display: flex;
+  padding: 4px 8px;
+
+  &:first-child {
+    margin-top: 4px;
+  }
+  &:last-child {
+    margin-bottom: 4px;
+  }
+
+  .checkbox {
+    flex: 0 0 32px;
+    height: 32px;
+    margin-right: 8px;
+  }
+}
+.placeholder {
+  color: $neutral-darker;
+}
+.selectPlaceholderLabel {
+  overflow: hidden;
+  padding-right: 24px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.label {
+  color: $neutral-darker;
+  font-size: $font-spec-6-size;
+  line-height: 1.5;
+  text-indent: 8px;
+}

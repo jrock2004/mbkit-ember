@@ -1,0 +1,33 @@
+.textarea {
+  background: $background;
+  border: 1px solid $neutral-light;
+  border-radius: $radius;
+  box-sizing: border-box;
+  color: $foreground;
+  display: block;
+  font-size: $font-spec-7-size;
+  font-family: $font-family;
+  height: 152px;
+  padding: 8px;
+  outline: none;
+  resize: none;
+  transition: box-shadow .1s ease-out, border .2s ease-out;
+  width: 100%;
+
+  &:not(:disabled) {
+    &:focus {
+      border-color: $secondary-base;
+      box-shadow: 0 0 0 4px $focus;
+    }
+    &.invalid {
+      border-color: $error-base;
+    }
+  }
+
+  &:disabled {
+    background: $neutral-light;
+    border-color: $neutral-light;
+    color: $neutral-darker;
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,58 @@
+.radio {
+  appearance: none;
+  background: $background;
+  border: 1px solid $neutral-light;
+  border-radius: 50%;
+  display: inline-block;
+  height: 24px;
+  outline: none;
+  position: relative;
+  vertical-align: middle;
+  width: 24px;
+
+  &, & * {
+    box-sizing: border-box;
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &:before {
+    background: none;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    position: absolute;
+    height: 12px;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 12px;
+  }
+
+  &:focus {
+    border-color: $secondary-base;
+    box-shadow: 0 0 0 4px $focus;
+  }
+
+  &.invalid {
+    border-color: $error-base;
+  }
+
+  &:checked {
+    &:before {
+      background: $secondary-base;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background: $neutral-light;
+    border-color: $neutral-light;
+
+    &:checked:before {
+      background: $neutral-dark;
+    }
+  }
+}
