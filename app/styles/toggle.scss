@@ -1,0 +1,66 @@
+.toggle {
+  appearance: none;
+  background: $neutral-dark;
+  border-radius: 15px;
+  cursor: pointer;
+  height: 31px;
+  margin: 0;
+  outline: none;
+  position: relative;
+  transition: box-shadow .1s ease-out;
+  vertical-align: middle;
+  width: 48px;
+
+  &, & * {
+    box-sizing: border-box;
+  }
+
+  &:before {
+    background: $secondary-foreground;
+    border-radius: 50%;
+    box-shadow: 0 2px 2px 0 rgba(#000, .5);
+    content: '';
+    display: block;
+    height: 27px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+    transition: left .1s ease-out;
+    width: 27px;
+  }
+
+  &.size2 {
+    height: 17px;
+    width: 29px;
+
+    &:before {
+      height: 13px;
+      width: 13px;
+    }
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 4px $focus;
+  }
+  &:active {
+    box-shadow: 0 0 0 8px $focus;
+  }
+  &:checked {
+    background: $secondary-base;
+
+    &:before {
+      left: calc(100% - 29px);
+    }
+    &.size2:before {
+      left: calc(100% - 15px);
+    }
+  }
+  &:disabled {
+    background: $neutral-light;
+    cursor: not-allowed;
+
+    &:before {
+      box-shadow: 0 2px 2px 0 rgba(#000, .2);
+    }
+  }
+}
