@@ -1,7 +1,7 @@
 MBKit
 ==============================================================================
 
-This ember addon was created from the idea of [MBKit](https://github.com/mindbody/mbkit) which was built for react. Wanted to be able to use the styles from there but as ember components instead of react componetns
+This ember addon was created from the idea of [MBKit](https://github.com/mindbody/mbkit) which was built for react. Wanted to be able to use the styles from there but as ember components instead of react components
 
 
 Compatibility
