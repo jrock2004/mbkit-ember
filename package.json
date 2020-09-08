@@ -26,6 +26,7 @@
     "ember-cli-babel": "^7.21.0",
     "ember-cli-htmlbars": "^5.2.0",
     "ember-cli-sass": "^10.0.1",
+    "ember-truth-helpers": "^2.1.0",
     "sass": "^1.26.10"
   },
   "devDependencies": {
@@ -51,7 +52,6 @@
     "ember-source": "~3.20.2",
     "ember-source-channel-url": "^2.0.1",
     "ember-template-lint": "^2.9.1",
-    "ember-truth-helpers": "^2.1.0",
     "ember-try": "^1.4.0",
     "eslint": "^7.5.0",
     "eslint-plugin-ember": "^8.9.1",
