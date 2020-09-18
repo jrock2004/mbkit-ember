@@ -18,6 +18,7 @@ You need to be using sass in your project. If you are not you have to install it
 
 ```
 ember install ember-cli-sass
+ember install ember-element-helper
 ```
 
 You then will need to rename `app/styles/app.css` to `app/styles/app.scss`
