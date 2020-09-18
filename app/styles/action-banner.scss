@@ -1,0 +1,66 @@
+$transitionTime: 400;
+
+:export {
+  transitionTime: $transitionTime;
+}
+
+.container {
+  height: auto;
+  overflow: hidden;
+  transition: height #{$transitionTime}ms ease-out;
+
+  &, & * {
+    box-sizing: border-box;
+  }
+}
+
+.actionBanner {
+  align-items: center;
+  color: $foreground;
+  display: flex;
+  font-size: $font-spec-7-size;
+  font-family: $font-family;
+  justify-content: center;
+  padding: 20px 16px;
+  padding-right: 48px;
+  position: relative;
+  width: 100%;
+
+  &.warning {
+    background: $warning-light;
+  }
+
+  &.error {
+    background: $error-light;
+  }
+
+  .closeIcon {
+    // TODO remove button reset styles once imported icon button
+    align-items: center;
+    appearance: none;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    height: 44px;
+    justify-content: center;
+    margin: 0;
+    outline: none;
+    transition: all .2s ease-out;
+    width: 44px;
+
+    &:focus {
+      box-shadow: 0 0 0 4px $focus;
+    }
+
+    &:active {
+      box-shadow: 0 0 0 8px $focus;
+    }
+
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
