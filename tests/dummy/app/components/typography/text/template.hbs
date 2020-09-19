@@ -1,0 +1,11 @@
+<DocsDemo as |demo|>
+  <demo.example @name="typography-text.hbs">
+    <Text>This is a paragraph</Text>
+    <Text @as={{element "span"}}>This is a span tag</Text>
+    <Text @as={{element "span"}} @color="success">This is a span tag with color</Text>
+    <Text @size="1">This is a paragraph</Text>
+    <Text @color="error">This is a paragraph</Text>
+  </demo.example>
+
+  {{demo.snippet 'typography-text.hbs'}}
+</DocsDemo>
