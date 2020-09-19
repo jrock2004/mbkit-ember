@@ -1,0 +1,11 @@
+<DocsDemo as |demo|>
+  <demo.example @name="card-demo-1.hbs">
+    <Card>This is a standard card where you can place content.</Card>
+
+    <Card @as={{element "section"}}>
+      This card is rendered as a section element using the "as" prop.
+    </Card>
+  </demo.example>
+
+  {{demo.snippet 'card-demo-1.hbs'}}
+</DocsDemo>

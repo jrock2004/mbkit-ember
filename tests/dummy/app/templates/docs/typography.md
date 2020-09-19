@@ -30,6 +30,3 @@ A helper for displaying text
 | @color  | 'default' \| 'primary' \| 'success' \| 'warning' \| 'error' \| 'info' \| 'meta' |  | false | Sets the text color. By default we use our brand foreground |
 
 <Typography::Text />
-
-
-

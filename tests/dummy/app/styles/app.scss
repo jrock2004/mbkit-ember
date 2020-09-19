@@ -1,1 +1,27 @@
 @import 'mbkit-ember';
+
+.card {
+  margin-bottom: 24px;
+}
+
+#example-card-demo-1\.hbs {
+  background: #eee;
+}
+
+.docs-list-disc {
+  margin-left: 2.5rem;
+}
+
+#example-button-variant\.hbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-gap: 16px;
+  margin-bottom: 24px;
+
+  .icon,
+  .iconPrimary {
+    width: 40px;
+  }
+}
+
+
