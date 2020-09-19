@@ -80,7 +80,9 @@
     "edition": "octane"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "https://jrock2004.github.io/mbkit-ember"
+
   },
   "homepage": "https://jrock2004.github.io/mbkit-ember"
 }
