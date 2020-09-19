@@ -29,4 +29,4 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
-      - run: .node_modules/.bin/ember deploy production
+      - run: npm run deploy
