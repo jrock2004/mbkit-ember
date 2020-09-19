@@ -7,6 +7,8 @@ name: Node.js CI
 on:
   push:
     branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -29,4 +31,4 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
-      - run: npm run deploy
+      - run: npm run test
