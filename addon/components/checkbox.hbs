@@ -1,1 +1,10 @@
-<input class="checkbox {{if @invalid 'invalid'}}" type="checkbox" aria-invalid={{@invalid}} ...attributes />
+<input
+  class="checkbox {{if @invalid 'invalid'}}"
+  type="checkbox"
+  aria-invalid={{@invalid}}
+  aria-checked={{this.ariaChecked}}
+  checked={{this.isChecked}}
+  ...attributes
+  {{did-insert this.setCheckStatus}}
+  {{did-update this.setCheckStatus}}
+/>

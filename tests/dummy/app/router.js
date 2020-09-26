@@ -10,6 +10,7 @@ Router.map(function () {
   docsRoute(this, function () {
     this.route("button");
     this.route("card");
+    this.route("checkbox");
     this.route("typography");
   });
 

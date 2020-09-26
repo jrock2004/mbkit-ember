@@ -1,0 +1,19 @@
+<DocsDemo as |demo|>
+  <demo.example @name="checkbox-explicit-implicit.hbs">
+    <div>
+      {{!-- Explicit association with htmlFor and the input's id --}}
+      <Checkbox id="emailOptIn" aria-labelledby="emailOptInLabel" />
+      <label for="emailOptIn" id="emailOptInLabel">
+        Send me updates on this product
+      </label>
+    </div>
+    <div>
+      {{!-- Implicit association by wrapping the label tag around the input --}}
+      <label>
+        <Checkbox /> I agree to the terms and conditions
+      </label>
+    </div>
+  </demo.example>
+
+  {{demo.snippet 'checkbox-explicit-implicit.hbs'}}
+</DocsDemo>
