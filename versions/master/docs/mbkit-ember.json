@@ -1,1 +1,1 @@
-{"jsonapi":{"version":"1.0"},"data":{"type":"project","id":"mbkit-ember","attributes":{"name":"mbkit-ember","version":"0.0.3-alpha","navigationIndex":[]},"relationships":{"modules":{"data":[]}}}}
+{"jsonapi":{"version":"1.0"},"data":{"type":"project","id":"mbkit-ember","attributes":{"name":"mbkit-ember","version":"0.0.4-alpha","navigationIndex":[]},"relationships":{"modules":{"data":[]}}}}
