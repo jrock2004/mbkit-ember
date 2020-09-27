@@ -19,7 +19,7 @@ export default class InputComponent extends Component {
 
   get containerClass() {
     let css = "inputContainer",
-      { before, after } = this.args;
+      { before, after, invalid } = this.args;
 
     if (before && after) {
       css = `${css} beforeInput afterInput`;
@@ -29,12 +29,16 @@ export default class InputComponent extends Component {
       css = `${css} afterInput`;
     }
 
+    if (invalid) {
+      css = `${css} invalid`;
+    }
+
     return css;
   }
 
   get inputClass() {
     let css = "input",
-      { before, after, isInvalid } = this.args;
+      { before, after, invalid } = this.args;
 
     if (before && after) {
       css = `${css} hasBefore hasAfter`;
@@ -44,7 +48,7 @@ export default class InputComponent extends Component {
       css = `${css} hasAfter`;
     }
 
-    if (isInvalid) {
+    if (invalid) {
       css = `${css} invalid`;
     }
 

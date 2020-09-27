@@ -25,7 +25,7 @@ module("Integration | Component | input", function (hooks) {
   });
 
   test("Input is in a not valid state", async function (assert) {
-    await render(hbs`<Input @isInvalid={{true}} />`);
+    await render(hbs`<Input @invalid={{true}} />`);
 
     assert.dom(".input").hasClass("invalid").hasAttribute("aria-invalid");
   });

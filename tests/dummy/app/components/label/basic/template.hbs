@@ -1,0 +1,13 @@
+<DocsDemo as |demo|>
+  <demo.example @name="label-basic.hbs">
+    <Label for="username" id="username-label">
+      Username
+    </Label>
+    <Input id="username" aria-descibedby="username-label username-helper-text" />
+    <Label for="username" id="username-helper-text">
+      Something that describes you
+    </Label>
+  </demo.example>
+
+  {{demo.snippet 'label-basic.hbs'}}
+</DocsDemo>

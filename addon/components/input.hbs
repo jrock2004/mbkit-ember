@@ -1,5 +1,5 @@
 {{#if (or @before @after)}}
-<div id={{this.divId}} class={{this.containerClass}} data-disabled={{if @disabled "true"}}>
+  <div id={{this.divId}} class={{this.containerClass}} data-disabled={{if @disabled "true"}}>
     {{#if @before}}
       <span class="beforeInput">
         {{@before}}
@@ -8,7 +8,7 @@
     <input
       class={{this.inputClass}}
       value={{@value}}
-      aria-invalid={{@isInvalid}}
+      aria-invalid={{@invalid}}
       disabled={{@disabled}}
       {{on "focus" this.handleFocus}}
       {{on "blur" this.handleFocus}}
@@ -24,7 +24,7 @@
   <input
     class={{this.inputClass}}
     value={{@value}}
-    aria-invalid={{@isInvalid}}
+    aria-invalid={{@invalid}}
     disabled={{@disabled}}
     {{on "focus" this.handleFocus}}
     {{on "blur" this.handleFocus}}

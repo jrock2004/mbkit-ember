@@ -11,6 +11,8 @@ Router.map(function () {
     this.route("button");
     this.route("card");
     this.route("checkbox");
+    this.route("input");
+    this.route("label");
     this.route("typography");
   });
 

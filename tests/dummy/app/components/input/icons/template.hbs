@@ -1,0 +1,12 @@
+<DocsDemo as |demo|>
+  <demo.example @name="input-icons.hbs">
+    <Input placeholder="How much does this class cost?" @before="$" />
+    <Input placeholder="How much does this class cost?" @after="€" />
+    <Input placeholder="How much does this class cost?" @before="$" @disabled={{true}} />
+    <Input placeholder="How much does this class cost?" @after="€" @disabled={{true}} />
+    <Input placeholder="How much does this class cost?" @after="$" @invalid={{true}} />
+    <Input placeholder="How much does this class cost?" @before="$" @after="c" />
+  </demo.example>
+
+  {{demo.snippet 'input-icons.hbs'}}
+</DocsDemo>

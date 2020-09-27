@@ -1,0 +1,9 @@
+<DocsDemo as |demo|>
+  <demo.example @name="input-basic.hbs">
+    <Input placeholder="Please enter your first name" @value="" />
+    <Input placeholder="Address line 2" @value="" @disabled={{true}} />
+    <Input placeholder="More info here" @value="" @invalid={{true}} />
+  </demo.example>
+
+  {{demo.snippet 'input-basic.hbs'}}
+</DocsDemo>
