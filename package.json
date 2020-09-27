@@ -1,6 +1,6 @@
 {
   "name": "mbkit-ember",
-  "version": "0.0.4-alpha",
+  "version": "0.0.5-alpha",
   "description": "A clone of MBKit that works with Ember vs React",
   "keywords": [
     "mbkit",
