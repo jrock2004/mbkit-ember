@@ -1,0 +1,21 @@
+<DocsDemo as |demo|>
+  <demo.example @name="textarea-basic.hbs">
+    {{!-- Implicit label --}}
+    <div>
+      <label>
+        What is something you would change with your experience?
+        <Textarea @value="Some content" />
+      </label>
+    </div>
+
+    {{!-- Explicit label --}}
+    <div>
+      <label for="feedback" id="feedback-label">
+        Any additional feedback?
+      </label>
+      <Textarea id="feedback" aria-labelledby="feedback-label" @value="Some content" />
+    </div>
+  </demo.example>
+
+  {{demo.snippet 'textarea-basic.hbs'}}
+</DocsDemo>

@@ -19,7 +19,7 @@ module("Integration | Component | textarea", function (hooks) {
   });
 
   test("Text area is invalid", async function (assert) {
-    await render(hbs`<Textarea @value="Some content" @isInvalid={{true}} />`);
+    await render(hbs`<Textarea @value="Some content" @invalid={{true}} />`);
 
     assert.dom(".textarea").hasClass("invalid").hasAttribute("aria-invalid");
   });

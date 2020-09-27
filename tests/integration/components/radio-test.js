@@ -14,7 +14,7 @@ module("Integration | Component | radio", function (hooks) {
   });
 
   test("Radio input is selected", async function (assert) {
-    await render(hbs`<Radio @isChecked={{true}} /> Item`);
+    await render(hbs`<Radio @checked={{true}} /> Item`);
 
     assert.dom(".radio").isChecked();
   });

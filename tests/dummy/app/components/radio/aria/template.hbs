@@ -1,0 +1,24 @@
+<DocsDemo as |demo|>
+  <demo.example @name="radio-aria.hbs">
+    <div role="group" aria-labelledby="favorite-season-label">
+      <p id="favorite-season-label">Please select your favorite season</p>
+
+      <Radio name="season" id="spring" value="spring" />
+      <label htmlFor="spring">Spring</label>
+      <br />
+
+      <Radio name="season" value="summer" id="summer" />
+      <label htmlFor="summer">Summer</label>
+      <br />
+
+      <Radio name="season" value="fall" id="fall" />
+      <label htmlFor="fall">Fall</label>
+      <br />
+
+      <Radio name="season" value="winter" id="winter" />
+      <label htmlFor="winter">Winter</label>
+    </div>
+  </demo.example>
+
+  {{demo.snippet 'radio-aria.hbs'}}
+</DocsDemo>

@@ -1,0 +1,18 @@
+<DocsDemo as |demo|>
+  <demo.example @name="radio-basic.hbs">
+    <label>
+      <Radio /> <Radio disabled /> Default unselected
+    </label>
+
+    <label>
+      <Radio @checked={{true}} /> <Radio @checked={{true}} disabled /> Default selected
+    </label>
+
+    <label>
+      <Radio @invalid={{true}} /> <Radio @checked={{true}} @invalid={{true}} /> <Radio @checked={{false}} disabled /> <Radio @checked={{true}} disabled /> Invalid states
+    </label>
+
+  </demo.example>
+
+  {{demo.snippet 'radio-basic.hbs'}}
+</DocsDemo>

@@ -1,0 +1,15 @@
+<DocsDemo as |demo|>
+  <demo.example @name="toggle-basic.hbs">
+    <div>
+      <Toggle @checked={{false}} />
+      <Toggle @checked={{false}} @size="2" />
+    </div>
+
+    <div>
+      <Toggle @checked={{true}} />
+      <Toggle @checked={{true}} @size="2" />
+    </div>
+  </demo.example>
+
+  {{demo.snippet 'toggle-basic.hbs'}}
+</DocsDemo>

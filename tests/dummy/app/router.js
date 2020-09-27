@@ -13,6 +13,9 @@ Router.map(function () {
     this.route("checkbox");
     this.route("input");
     this.route("label");
+    this.route("radio");
+    this.route("textarea");
+    this.route("toggle");
     this.route("typography");
   });
 
