@@ -71,3 +71,15 @@
     margin-bottom: 1rem;
   }
 }
+
+#example-action-banner-states\.hbs {
+  > div:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
+}
+
+#example-action-banner-content-below\.hbs {
+  button {
+    margin-bottom: 1rem;
+  }
+}

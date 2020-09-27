@@ -1,6 +1,6 @@
 {
   "name": "mbkit-ember",
-  "version": "0.0.3-alpha",
+  "version": "0.0.4-alpha",
   "description": "A clone of MBKit that works with Ember vs React",
   "keywords": [
     "mbkit",
@@ -43,6 +43,7 @@
     "@glimmer/tracking": "^1.0.0",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
+    "ember-animated": "^0.10.1",
     "ember-auto-import": "^1.6.0",
     "ember-cli": "~3.20.0",
     "ember-cli-addon-docs": "^0.10.0",

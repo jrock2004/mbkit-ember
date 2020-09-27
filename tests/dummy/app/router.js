@@ -8,6 +8,7 @@ export default class Router extends AddonDocsRouter {
 
 Router.map(function () {
   docsRoute(this, function () {
+    this.route("action-banner");
     this.route("button");
     this.route("card");
     this.route("checkbox");
