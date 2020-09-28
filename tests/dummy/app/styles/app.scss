@@ -76,10 +76,23 @@
   > div:not(:last-of-type) {
     margin-bottom: 1rem;
   }
+
+  .action-banner-icon {
+    height: 16px;
+    margin-right: 4px;
+    width: 16px;
+  }
 }
 
 #example-action-banner-content-below\.hbs {
   button {
     margin-bottom: 1rem;
   }
+
+  .action-banner-icon {
+    height: 16px;
+    margin-right: 4px;
+    width: 16px;
+  }
 }
+
