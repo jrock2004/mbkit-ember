@@ -4,8 +4,6 @@ import { fadeIn, fadeOut } from "ember-animated/motions/opacity";
 import { easeIn } from "ember-animated/easings/cosine";
 
 export default class ActionBannerComponent extends Component {
-  // animation = fade;
-
   *animation({ insertedSprites, removedSprites }) {
     removedSprites.forEach((sprite) => {
       fadeOut(sprite, { duration: 100 });
