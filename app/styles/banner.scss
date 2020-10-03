@@ -1,0 +1,83 @@
+@mixin svgTargetFill($fill) {
+  g:not([fill~="#"]),
+  path:not([fill~="#"]),
+  use:not([fill~="#"]) {
+    fill: $fill;
+  }
+}
+@mixin bannerColors($fg, $bg, $border, $icon) {
+  background: $bg;
+  border-color: $border;
+  color: $fg;
+
+  @include svgTargetFill($icon);
+
+  a {
+    color: $fg;
+  }
+}
+
+.banner {
+  border: 1px solid transparent;
+  border-radius: $radius;
+  display: flex;
+  font-family: $font-family;
+  padding: 16px;
+
+  &, & * {
+    box-sizing: border-box;
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 4px $focus;
+    outline: none;
+  }
+
+  .icon {
+    flex: 1 0;
+    margin-right: 16px;
+    max-width: 32px;
+  }
+
+  .content {
+    flex: 1;
+  }
+
+  .heading {
+    font-size: $font-spec-7-size;
+    font-weight: bold;
+    line-height: $font-spec-7-lineHeight;
+    margin: 0;
+  }
+
+  .body {
+    font-size: $font-spec-8-size;
+    line-height: $font-spec-8-lineHeight;
+    margin: 0;
+  }
+
+  &.success {
+    @include bannerColors($success-lightForeground, $success-light, $success-base, $success-base);
+  }
+
+  &.error {
+    @include bannerColors($error-lightForeground, $error-light, $error-base, $error-base);
+  }
+
+  &.warning {
+    @include bannerColors($warning-lightForeground, $warning-light, $warning-base, $error-lightForeground);
+  }
+
+  &.info {
+    @include bannerColors($neutral-darkest, $secondary-light, $secondary-base, $secondary-base);
+  }
+}

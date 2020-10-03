@@ -1,0 +1,11 @@
+<div class="banner {{this.variant}}">
+  <div class="icon">
+    <BannerIcon @variant={{this.variant}} />
+  </div>
+  <div class="content">
+    <h2 class="heading">{{@header}}</h2>
+    <p class="body">
+      {{yield}}
+    </p>
+  </div>
+</div>

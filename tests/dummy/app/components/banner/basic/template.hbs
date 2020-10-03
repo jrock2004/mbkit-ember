@@ -1,0 +1,21 @@
+<DocsDemo as |demo|>
+  <demo.example @name="banner-basic.hbs">
+    <Banner @variant="success" @header="Your billing information was updated">
+      It usually takes 3 to 4 weeks to see the banks update the auto deposits
+    </Banner>
+
+    <Banner @variant="warning" @header="Oops, please check for warnings">
+      Usually this is something simple and fixable, please review the form and make updates and try again
+    </Banner>
+
+    <Banner @variant="error" @header="Something went wrong">
+      There was a catastrophic error and we can not recover from here. Please try again later
+    </Banner>
+
+    <Banner @variant="info" @header="Looking for some information?">
+      You might be able to find it somewhere else
+    </Banner>
+  </demo.example>
+
+  {{demo.snippet 'banner-basic.hbs'}}
+</DocsDemo>
